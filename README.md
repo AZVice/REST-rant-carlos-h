@@ -2,8 +2,8 @@
 
 REST-Rant is an app where users can review restaurants. 
 
-[REST-RANT] is a project build to understand how APIs work. Also, it describes how to setup a basic README file. 
-The goal is to learn how end-points are build for a client to pull information from a server. 
+[REST-RANT] is a project to help me understand how APIs work. Also, it describes how to setup a basic README file. 
+The goal is to learn how end-points are built, and to show how a client pulls information from a server. 
 
 ##  Routes
 

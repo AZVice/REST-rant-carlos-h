@@ -4,17 +4,18 @@ const router = require('express').Router()
 
 router.get('/', (req, res) => {
     let places = [{
-        name: 'H-Thai-ML',
+        name: 'Baklava Restaurant',
         city: 'Seattle',
         state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/250/250'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: 'http://placekitten.com/250/250'
+        cuisines: 'Desserts',
+        pic: './images/rest1.jpg',  // Photo by Optical Chemist from Unsplash.com https://unsplash.com/photos/a-group-of-people-walking-down-a-street-at-night-uz7dXgkdvkU
+      }, 
+    {
+        name: 'Open Flame Restaurant',
+        city: 'Las Cruzes',
+        state: 'NM',
+        cuisines: 'Steak, Bakery',
+        pic: '/images/rest2.jpg',  //Photo by Prithviraj A. from Unsplashed.com. https://unsplash.com/photos/a-restaurant-filled-with-wooden-tables-and-chairs-vDlt9BQND-o
       }];
     res.render('places/index', {places})
 });

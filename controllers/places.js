@@ -1,17 +1,16 @@
-const express = require("express")
+//file places.js
 const router = require('express').Router()
 
-router.use(express.urlencoded({ extended: true }));
 
 
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
-router.post('/new', (req, res) => {
-  const {name, city, state, cuisines, pic} = req.body;
-  console.log('Form Data:', {name, city, state, cuisines, pic});
-  res.redirect('/');
+router.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('POST /places')
+  
 });
 
 router.get('/', (req, res) => {

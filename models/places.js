@@ -1,4 +1,4 @@
-
+//folder models file places.js
 
 module.exports = [{
         name: 'Baklava Restaurant',

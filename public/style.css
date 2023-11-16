@@ -1,11 +1,13 @@
+/* folder public/images file style.css*/
+
 h1 {
     text-align: center;
     color: cornflowerblue;
   }
   
   img{
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 320px;
   }
 
   nav {

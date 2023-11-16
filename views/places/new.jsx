@@ -1,4 +1,4 @@
-//file new.jsx
+//folder views/places file new.jsx
 const React = require('react')
 const Def = require('../default')
 

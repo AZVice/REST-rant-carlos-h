@@ -8,7 +8,7 @@ function home() {
             <main>
                 <h1>REST-Rant</h1>
                 <div>
-                    <img src="./images/chia-fruit-drink.jpg" alt="Chia Fruit Shake"/>
+                    <img src="./images/chia-fruit-drink.jpg" alt="Chia Fruit Shake" className='img-fluid w-50 h-auto'/>
                     </div>
                         Photo by <a href='https://unsplash.com/photos/two-fruit-beverages-on-glass-cups-MsTOg6rhRVk'>Brenda Godinez</a> on <a href='https://unsplash.com/@cravethebenefits'>Unsplash</a>
                     <div>

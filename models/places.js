@@ -1,7 +1,7 @@
 //folder models file places.js
 
 module.exports = [{
-        name: 'Baklava Restaurant',
+        name: 'Baklava Modern Restaurant',
         city: 'Seattle',
         state: 'WA',
         cuisines: 'Desserts',

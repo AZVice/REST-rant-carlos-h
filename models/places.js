@@ -5,7 +5,7 @@ module.exports = [{
         city: 'Seattle',
         state: 'WA',
         cuisines: 'Desserts',
-        pic: './images/rest1.jpg',  // Photo by Optical Chemist from Unsplash.com https://unsplash.com/photos/a-group-of-people-walking-down-a-street-at-night-uz7dXgkdvkU
+        pic: '/images/rest1.jpg',  // Photo by Optical Chemist from Unsplash.com https://unsplash.com/photos/a-group-of-people-walking-down-a-street-at-night-uz7dXgkdvkU
       }, 
     {
         name: 'Open Flame Restaurant',

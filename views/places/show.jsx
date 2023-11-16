@@ -3,11 +3,17 @@
 const React = require('react')
 const Def = require('../default')
 
-function show() {
+function show(data) {
+    const {name, pic, city, state} = data.place;
+    console.log('imagepath:', pic)
     return(
         <Def>
-            <main>
-                <h1>Show Page</h1>
+            <main className="container">
+                <h1 className='mt-5'>{ name }</h1>
+                <div className='row'>
+                    <img src={pic} alt="missing picture" className='img-fluid' />
+                </div>
+                <p>Location: {city}, {state}</p>
             </main>
         </Def>
     )

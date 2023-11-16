@@ -5,7 +5,6 @@ const Def = require('../default')
 
 function show(data) {
     const {name, pic, city, state} = data.place;
-    console.log('imagepath:', pic)
     return(
         <Def>
             <main className="container">

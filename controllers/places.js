@@ -45,21 +45,15 @@ router.get('/:id', (req, res) => {     //GET '/places/:id' Details about a parti
 
 
 
-
 router.put('/:id', (req, res) => {    //PUT '/places/:id' Update a particular place
-  console.log('Put is executing')
   let id = Number(req.params.id)
-  console.log('ID from params:' , req.params.id);
   if (isNaN(id)) {
-    console.log('invalid ID')
       res.render('error404')
   }
   else if (!places[id]) {
-    console.log('Place not found')
       res.status(404).render('error404')
   }
   else {
-    console.log('place not found')
     if (!req.body.pic) {
       req.body.pic = 'http://placekitten.com/400/400'
     }
@@ -97,7 +91,9 @@ router.get('/:id/edit', (req, res) => {      //GET '/places/:id/edit' Form page 
       res.render('error404')
   }
   else {
-    res.render('places/edit', { place: places[id] })
+    res.render('places/edit', {
+    place: places[req.params.id],
+    index: req.params.id})
   }
 })
 

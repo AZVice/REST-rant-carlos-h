@@ -12,7 +12,6 @@ function edit_form(data) {
                             <div className="form-group col-sm-6">
                                 <label htmlFor='name'>Place Name</label>
                                 <input className="form-control" id='name' name='name' value={data.place.name} required />
-                                <script>console.log({data.place.name})</script>
                             </div>
                         
                         

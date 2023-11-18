@@ -2,6 +2,8 @@
 const router = require('express').Router()
 const places = require('../models/places.js')
 
+
+
 router.get('/', (req, res) => {        ///GET '/' Home page
   res.render('places', {places})
 });
@@ -41,6 +43,9 @@ router.get('/:id', (req, res) => {     //GET '/places/:id' Details about a parti
   }
 })
 
+
+
+
 router.put('/:id', (req, res) => {    //PUT '/places/:id' Update a particular place
   console.log('Put is executing')
   let id = Number(req.params.id)
@@ -64,10 +69,22 @@ router.put('/:id', (req, res) => {    //PUT '/places/:id' Update a particular pl
     if (!req.body.state) {
       req.body.state = 'USA'
     }
-    places[id] = req.body;
-    res.render('places/index', {places });
+    places[id] = req.body
     res.redirect(`/places/${id}`)
       
+  }
+})
+
+
+router.delete('/:id', (req, res) => {             //DELETE '/places/:id' Delete a particular place 
+  let id = Number(req.params.id)
+  if (isNaN(id)){
+    res.render('error404')
+  }else if (!places[id]) {
+    res.render('error404')
+  }else{
+    places.splice(id, 1)
+    res.redirect('/places')
   }
 })
 
@@ -81,18 +98,6 @@ router.get('/:id/edit', (req, res) => {      //GET '/places/:id/edit' Form page 
   }
   else {
     res.render('places/edit', { place: places[id] })
-  }
-})
-
-router.delete('/:id', (req, res) => {             //DELETE '/places/:id' Delete a particular place 
-  let id = Number(req.params.id)
-  if (isNaN(id)){
-    res.render('error404')
-  }else if (!places[id]) {
-    res.render('error404')
-  }else{
-    places.splice(id, 1)
-    res.redirect('/places')
   }
 })
 

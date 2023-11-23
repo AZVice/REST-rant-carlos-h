@@ -5,8 +5,8 @@ const db = require('../models')
 
 router.get('/', (req, res) => {
   db.Place.find()
-  .then((Places) => {
-    res.render('places/index', {Places})
+  .then((places) => {
+    res.render('places/index', {places})
   })
   .catch(err =>  {
     console.log(err)
@@ -41,15 +41,15 @@ router.get('/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+  //res.send('PUT /places/:id stub')
 })
 
 router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
+  //res.send('DELETE /places/:id stub')
 })
 
 router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
+ // res.send('GET edit form stub')
 })
 
 router.post('/:id/rant', (req, res) => {

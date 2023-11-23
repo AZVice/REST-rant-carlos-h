@@ -6,7 +6,7 @@ const db = require('../models')
 router.get('/', (req, res) => {
   db.Place.find()
   .then((Places) => {
-    res.render('places/index', {places})
+    res.render('places/index', {Places})
   })
   .catch(err =>  {
     console.log(err)

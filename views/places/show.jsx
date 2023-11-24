@@ -11,6 +11,9 @@ function show(data) {
                 <div className='row mt-5'>
                     <div className='col-lg-6'>
                         <img src={pic} alt="missing picture" className='img-fluid w-100 h-auto' />
+                        <h3>
+                        Located in {data.place.city}, {data.place.state}
+                    </h3>
                     </div>
                     <div className='col-lg-6'>
                         <h1 className='mt-5'>{ name }</h1>
@@ -20,8 +23,13 @@ function show(data) {
                         </div>
                         <div>
                             <h2>Description</h2>
-                            <p>Location: {city}, {state} and Serving {cuisines}</p>
-                        </div>
+                            <h4>
+                                {data.place.showEstablished()}
+                            </h4>
+                            <h5>
+                               Serving {data.place.cuisines}
+                            </h5> 
+                       </div>
                         <div>
                             <a href= {`/places/${data.id}/edit`} className='btn btn-warning'>
                                 Edit

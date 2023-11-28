@@ -5,12 +5,11 @@ const Def = require('../default')
 
 function index(data){
     let placesFormatted = data.places.map((place) => { 
-        console.log(data.places.map)
         return (
             <div className="col-sm-4">
                 <h2>
                   <a href={`/places/${place.id}`} >
-                     {place.name}
+                     {place.name} 
                 </a>
                 </h2>
                 <p className='text-left'>

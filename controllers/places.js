@@ -31,7 +31,9 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
+  .populate('comments')
   .then(place => {
+    console.log(place.comments)
     res.render('places/show', { place })
   })
   .catch(err => {
@@ -71,11 +73,11 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.post('/:id/rant', (req, res) => {
-  //res.send('GET /places/:id/rant stub')
+  res.send('GET /places/:id/rant stub')
 })
 
 router.delete('/:id/rant/:rantId', (req, res) => {
-    //res.send('GET /places/:id/rant/:rantId stub')
+    res.send('GET /places/:id/rant/:rantId stub')
 })
 
 module.exports = router

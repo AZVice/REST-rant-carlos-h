@@ -83,9 +83,13 @@ function show(data) {
                         </div>
                     </div>
                 </div>
-                <div className='mt-4'>
-                    <h2>Comments</h2>
-                    {comments}   
+                <div className= 'mt-4 row'>
+                    <h2 className='w-100'>Comments</h2>
+                    {comments.map((comment, index) => (
+                        <div key={index} className='col-md-4 mb-3'>
+                            {comment}
+                        </div> 
+                    ))}   
                 </div>
                 <h3> Rant or Rave!!</h3>
                 <form action={`/places/${data.place.id}/comment`} method='POST'>
@@ -101,11 +105,11 @@ function show(data) {
                                 <input id='author' name='author' className='form-control'/>
                         </div>
                         <div className='form-group col-sm-4'>
-                                <label htmlFor='stars'>Rating</label>
+                                <label htmlFor='stars' className='d-block'>Rating</label>
                                 <input type='range' step='0.5' min='1' max='5' id='stars' name='stars'/>
                         </div>
                         <div className='form-group col-sm-2'>
-                                <label htmlFor='content'>Rant?</label>
+                                <label htmlFor='content' className='d-block'>Rant?</label>
                                 <input type='checkbox' id='rant' name='rant'/>  
                         </div>
                     </div>

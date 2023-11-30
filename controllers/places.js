@@ -16,15 +16,15 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   if(req.body.pic ===''){req.body.pic = undefined}
-  if(req.body.pic ===''){req.body.city = undefined}
-  if(req.body.pic ===''){req.body.state = undefined}
+  if(req.body.city ===''){req.body.city = undefined}
+  if(req.body.state ===''){req.body.state = undefined}
   db.Place.create(req.body)
   .then(() => {
     res.redirect('/places')
   })
   .catch(err => {
   if (err && err.name == 'ValidationError'){
-      let message = 'Validation Error:'
+      let message = 'Review your information'
       res.render('places/new', {message})
     }
     else{

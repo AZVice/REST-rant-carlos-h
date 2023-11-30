@@ -5,11 +5,8 @@ const Def = require('../default')
 
 function show(data) {
     let rating;
-    let comments = (
-        <h3 className='inactive'>
-            No comments yet!
-        </h3>
-    )
+    let comments = [];
+
     if (data.place.comments.length) {
         let sumRatings = data.place.comments.reduce((tot, c) => {
             return tot + c.stars

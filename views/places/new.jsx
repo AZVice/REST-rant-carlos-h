@@ -2,11 +2,20 @@
 const React = require('react')
 const Def = require('../default')
 
-function edit_form() {
+function edit_form(data) {
+    let message = '';
+    if (data && data.message) {
+        message = (
+            <h4 className='alert-danger'>
+                {data.message}
+            </h4>
+            );
+    }
     return (
       <Def>
         <main>
           <h1>Add a New Place</h1>
+          {message}
           <form method='POST' action="/places">
             <div className='row'>
               <div className='col-md-6'>

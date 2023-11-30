@@ -15,13 +15,21 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  if(req.body.pic ===''){req.body.pic = undefined}
+  if(req.body.pic ===''){req.body.city = undefined}
+  if(req.body.pic ===''){req.body.state = undefined}
   db.Place.create(req.body)
   .then(() => {
     res.redirect('/places')
   })
   .catch(err => {
-    console.log('err', err)
+  if (err && err.name == 'ValidationError'){
+      let message = 'Validation Error:'
+      res.render('places/new', {message})
+    }
+    else{
     res.render('error404')
+    }
   })
 })
 
@@ -33,7 +41,6 @@ router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
   .populate('comments')
   .then(place => {
-    console.log(place.comments)
     res.render('places/show', { place })
   })
   .catch(err => {
@@ -59,7 +66,7 @@ router.delete('/:id', (req, res) => {
   })
   .catch(err => {
     res.render('error404')
-  } )
+  })
 })
 
 router.get('/:id/edit', (req, res) => {

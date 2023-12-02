@@ -68,15 +68,19 @@ function show(data) {
                                Serving {data.place.cuisines}
                             </h5> 
                        </div>
-                        <div>
-                            <a href= {`/places/${data.place.id}/edit`} className='btn btn-warning'>
-                                Edit
-                            </a>
-                            <form method="POST" action= {`/places/${data.place.id}?_method=DELETE`}>
-                                <button type="submit" className='btn btn-danger'>
-                                    Delete
-                                </button>
-                            </form>
+                                            <div className='row justify-content-center'>
+                            <div className='col-sm-2 text-center'>
+                                <a href={`/places/${data.place.id}/edit`} className='btn btn-warning'>
+                                    Edit
+                                </a>
+                            </div>
+                            <div className='col-sm-2 text-center'>
+                                <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
+                                    <button type="submit" className='btn btn-danger'>
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
